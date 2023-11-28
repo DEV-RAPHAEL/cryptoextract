@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import  './app.css';
 import { useState } from 'react'
 import CryptoJS from 'crypto-js';
@@ -9,9 +8,10 @@ const SECRET_PASS = "XkhZG4fW2t2W"
 export default function Home() {
   const [Screen, setScreen] = useState("encrypt");
   const [errorMessage, setErrorMessage] = useState("Please Enter Some Text");
-  const[text, setText] = useState("")
+  const [text, setText] = useState("")
   const [encryptedData, setEncryptedData] = useState("");
   const [decryptedData, setDecryptedData] = useState("");
+  
   const encryptData = () => {
     try{
       const data = CryptoJS.AES.encrypt(
